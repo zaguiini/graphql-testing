@@ -12,6 +12,8 @@
     "@testing-library/react": "10.4.9"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.8.1",
+    "@cypress/webpack-preprocessor": "^5.4.5",
     "@graphql-codegen/cli": "1.17.8",
     "@graphql-codegen/introspection": "1.17.8",
     "@graphql-codegen/typescript": "1.17.8",
@@ -25,6 +27,8 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-hot-loader": "^4.1.1",
     "@types/styled-components": "^5.1.0",
+    "babel-loader": "^8.1.0",
+    "cypress": "^5.0.0",
     "jest-environment-jsdom": "^26.3.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "patch-package": "^6.2.2",
@@ -40,7 +44,8 @@
     "test:e2e": "NODE_ENV=development davinci qa e2e",
     "lint": "davinci syntax lint code . && davinci syntax lint styles .",
     "prepublish": "if [ -f 'yarn.lock' ]; then yarn-deduplicate yarn.lock; fi",
-    "graphql:codegen": "graphql-codegen --config codegen.yml"
+    "graphql:codegen": "graphql-codegen --config codegen.yml",
+    "cypress:open": "NODE_ENV=test cypress open"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

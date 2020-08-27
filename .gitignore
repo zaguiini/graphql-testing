@@ -27,3 +27,7 @@ yarn-error.log*
 
 # env
 .envrc
+
+# cypress screenshots
+cypress/screenshots/
+cypress/fixtures/

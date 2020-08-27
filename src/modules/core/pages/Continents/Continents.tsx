@@ -3,32 +3,26 @@ import React from 'react'
 import { useGetContinentsQuery } from '~operations'
 
 const Continents = () => {
-  const { data, loading, error } = useGetContinentsQuery()
+  const { data, loading } = useGetContinentsQuery()
 
-  if (data) {
-    return (
-      <div style={{ margin: 16 }}>
-        <p>A list of continents:</p>
-        <ul>
-          {data.continents.map(({ code, name }) => (
-            <li key={code} data-testid='continent'>
-              {name}
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
+  const content = data ? (
+    <ul>
+      {data.continents.map(({ code, name }) => (
+        <li key={code} data-testid='continent'>
+          {name}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p>{loading ? 'Loading...' : 'Something went wrong, dude...'}</p>
+  )
 
-  if (loading) {
-    return <span>Loading...</span>
-  }
-
-  if (error) {
-    return <span>Something went wrong...</span>
-  }
-
-  return null
+  return (
+    <div style={{ margin: 16 }}>
+      <p>A list of continents:</p>
+      {content}
+    </div>
+  )
 }
 
 Continents.defaultProps = {}

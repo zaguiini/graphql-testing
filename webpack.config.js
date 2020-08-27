@@ -10,7 +10,7 @@ module.exports = ({ config }) => {
   config.resolve.alias = {
     ...config.resolve.alias,
     '~core': resolve(__dirname, 'src', 'modules', 'core'),
-    '~queries': resolve(__dirname, 'src', 'generated', 'graphql.tsx'),
+    '~operations': resolve(__dirname, 'src', 'generated', 'graphql.tsx'),
     '~support': resolve(__dirname, 'src', 'modules', 'support')
   }
 

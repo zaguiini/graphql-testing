@@ -2,5 +2,5 @@ import { HttpLink } from '@apollo/client'
 
 export const createLink = () =>
   new HttpLink({
-    uri: 'https://countries.trevorblades.com/'
+    uri: process.env.DAVINCI_APP_API_URL
   })
