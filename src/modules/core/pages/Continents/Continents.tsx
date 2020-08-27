@@ -1,18 +1,20 @@
 import React from 'react'
-import { useQuery } from '@apollo/client'
 
-import getContinents from '~core/queries/getContinents.gql'
+import { useGetContinentsQuery } from '~operations'
 
 const Continents = () => {
-  const { data, loading, error } = useQuery(getContinents)
+  const { data, loading, error } = useGetContinentsQuery()
 
   if (data) {
     return (
-      <ul>
-        {data.map(({ code, name }) => (
-          <li key={code}>{name}</li>
-        ))}
-      </ul>
+      <div style={{ margin: 16 }}>
+        <p>A list of continents:</p>
+        <ul>
+          {data.continents.map(({ code, name }) => (
+            <li key={code}>{name}</li>
+          ))}
+        </ul>
+      </div>
     )
   }
 
