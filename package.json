@@ -1,0 +1,57 @@
+{
+  "name": "@toptal/graphql-testing",
+  "version": "1.1.5",
+  "description": "Toptal frontend application created with Davinci CLI",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Toptal",
+  "homepage": "https://github.com/toptal/graphql-testing/tree/master#readme",
+  "license": "ISC",
+  "devDependencies": {
+    "@toptal/browserslist-config": "^0.1.0-alpha.2",
+    "@toptal/davinci": "^0.2.150",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-hot-loader": "^4.1.1",
+    "@types/styled-components": "^5.1.0",
+    "react-hot-loader": "^4.12.21",
+    "yarn-deduplicate": "^2.0.0"
+  },
+  "scripts": {
+    "analyze": "davinci engine analyze",
+    "build": "davinci engine build",
+    "start": "davinci engine start",
+    "test": "davinci qa unit --runInBand",
+    "test:e2e": "NODE_ENV=development davinci qa e2e",
+    "lint": "davinci syntax lint code . && davinci syntax lint styles .",
+    "prepublish": "if [ -f 'yarn.lock' ]; then yarn-deduplicate yarn.lock; fi"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "davinci syntax lint code",
+      "prettier-standard",
+      "git add"
+    ],
+    "styles.{js,jsx,ts,tsx}": [
+      "davinci syntax lint styles",
+      "prettier-standard",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "main": "./src/index.tsx",
+  "gitHead": "34f598438b38bdfc187f86b69f97be7d2aed30a2",
+  "dependencies": {
+    "@toptal/picasso": "^4.92.1",
+    "@toptal/picasso-lab": "^2.30.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1",
+    "typescript": "^4.0.2"
+  }
+}
