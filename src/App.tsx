@@ -2,11 +2,14 @@ import { hot } from 'react-hot-loader/root'
 import React from 'react'
 import Picasso from '@toptal/picasso'
 
-import { WelcomePage } from './modules/welcome'
+import { ApolloWrapper } from '~core/components'
+import { Continents } from '~core/pages'
 
 const App = () => (
   <Picasso>
-    <WelcomePage />
+    <ApolloWrapper>
+      <Continents />
+    </ApolloWrapper>
   </Picasso>
 )
 
