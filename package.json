@@ -8,22 +8,31 @@
   "author": "Toptal",
   "homepage": "https://github.com/toptal/graphql-testing/tree/master#readme",
   "license": "ISC",
+  "resolutions": {
+    "@testing-library/react": "10.4.9"
+  },
   "devDependencies": {
     "@graphql-codegen/cli": "1.17.8",
     "@graphql-codegen/introspection": "1.17.8",
     "@graphql-codegen/typescript": "1.17.8",
     "@graphql-codegen/typescript-operations": "1.17.8",
     "@graphql-codegen/typescript-react-apollo": "1.17.7",
+    "@graphql-tools/mock": "^6.1.0",
+    "@testing-library/react": "^10.4.9",
     "@toptal/browserslist-config": "^0.1.0-alpha.2",
     "@toptal/davinci": "^0.2.150",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.8.4",
     "@types/react-hot-loader": "^4.1.1",
     "@types/styled-components": "^5.1.0",
+    "jest-environment-jsdom": "^26.3.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "patch-package": "^6.2.2",
     "react-hot-loader": "^4.12.21",
     "yarn-deduplicate": "^2.0.0"
   },
   "scripts": {
+    "postinstall": "patch-package",
     "analyze": "davinci engine analyze",
     "build": "davinci engine build",
     "start": "davinci engine start",
@@ -48,6 +57,11 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "/^~(.*)$/": "./src/modules/$1"
     }
   },
   "main": "./src/index.tsx",

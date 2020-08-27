@@ -18,7 +18,8 @@
     "baseUrl": ".",
     "paths": {
       "~core/*": ["src/modules/core/*"],
-      "~operations": ["src/generated/graphql.tsx"]
+      "~operations": ["src/generated/graphql.tsx"],
+      "~support/*": ["src/modules/support/*"]
     }
   },
   "include": ["src"]

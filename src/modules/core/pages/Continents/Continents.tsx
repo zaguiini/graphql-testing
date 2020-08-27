@@ -11,7 +11,9 @@ const Continents = () => {
         <p>A list of continents:</p>
         <ul>
           {data.continents.map(({ code, name }) => (
-            <li key={code}>{name}</li>
+            <li key={code} data-testid='continent'>
+              {name}
+            </li>
           ))}
         </ul>
       </div>

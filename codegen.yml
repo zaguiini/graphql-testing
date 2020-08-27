@@ -11,6 +11,6 @@ generates:
       withComponent: false
       withHOC: false
       withHooks: true
-  ./src/graphql.schema.json:
+  ./src/modules/core/graphql.schema.json:
     plugins:
       - "introspection"

@@ -1,0 +1,22 @@
+diff --git a/node_modules/@toptal/davinci-qa/src/configs/jest.config.js b/node_modules/@toptal/davinci-qa/src/configs/jest.config.js
+index a64e83e..7e6f638 100644
+--- a/node_modules/@toptal/davinci-qa/src/configs/jest.config.js
++++ b/node_modules/@toptal/davinci-qa/src/configs/jest.config.js
+@@ -34,7 +34,8 @@ module.exports = {
+     ),
+     '^@modules(.*)$': '<rootDir>/src/modules$1',
+     '^@src(.*)$': '<rootDir>/src$1',
+-    '^~(.*)$': '<rootDir>/src$1'
++    '^~operations$': '<rootDir>/src/generated/graphql.tsx',
++    '^~(.*)$': '<rootDir>/src/modules/$1'
+   },
+ 
+   /**
+@@ -76,5 +77,6 @@ module.exports = {
+   },
+ 
+   transformIgnorePatterns: ['node_modules\/(?!\@toptal|\@topkit)'],
+-  verbose: true
++  verbose: true,
++  testEnvironment: 'jest-environment-jsdom'
+ }
